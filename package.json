@@ -1,0 +1,26 @@
+{
+  "name": "cli.cometer",
+  "version": "1.0.0",
+  "description": "CLI for handling commits easier.",
+  "bin": {
+    "cometer": "./bin/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./bin/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MonsterLynx/cli.cometer.git"
+  },
+  "author": "Monster Lynx Technologies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MonsterLynx/cli.cometer/issues"
+  },
+  "homepage": "https://github.com/MonsterLynx/cli.cometer#readme",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
