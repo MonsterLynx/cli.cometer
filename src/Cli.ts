@@ -21,6 +21,16 @@ export class Cli {
           name: 'fix',
           value: 'fix',
           description: 'Fix'
+        },
+        {
+          name: 'refactor',
+          value: 'refactor',
+          description: 'Refactor'
+        },
+        {
+          name: 'chore',
+          value: 'chore',
+          description: 'Chore'
         }
       ]
     })
@@ -29,8 +39,8 @@ export class Cli {
       message: 'Type in commit message'
     })
 
-    const task = await new GitProcessor().taskId()
-    const branch = await new GitProcessor().current()
+    const task = await this.git.taskId()
+    const branch = await this.git.current()
 
     const result = `${prefix}: ${message} [${task}]`
 
