@@ -2,6 +2,12 @@
 
 CLI that formats your commit message.
 
+## Installation
+
+1. Clone the repo
+2. `cd` into it
+3. `npm install -g .`
+
 ## Usage
 
 1. type `cometer`
@@ -9,16 +15,15 @@ CLI that formats your commit message.
 $ cometer
 ```
 
-2. a select appears with type of commit
+2. Type of commit, as a select
 ```bash
 $ - feat
 $ - fix
 $ - etc...
 ```
 
-3. after select, text input appears
+3. Commit message, as an input
 ```bash
-$ - type in commit message
 $ I did an awesome job
 ```
 
