@@ -5,34 +5,36 @@ import confirm from '@inquirer/confirm'
 import { GitProcessor } from "./GitProcessor"
 
 export class Cli {
+  choices = [
+    {
+      name: 'feat',
+      value: 'feat',
+      description: 'Feature'
+    },
+    {
+      name: 'fix',
+      value: 'fix',
+      description: 'Fix'
+    },
+    {
+      name: 'refactor',
+      value: 'refactor',
+      description: 'Refactor'
+    },
+    {
+      name: 'chore',
+      value: 'chore',
+      description: 'Chore'
+    }
+  ]
+
   constructor(private git = new GitProcessor()) {
   }
 
   async run() {
     const prefix = await select({
       message: 'Type of commit',
-      choices: [
-        {
-          name: 'feat',
-          value: 'feat',
-          description: 'Feature'
-        },
-        {
-          name: 'fix',
-          value: 'fix',
-          description: 'Fix'
-        },
-        {
-          name: 'refactor',
-          value: 'refactor',
-          description: 'Refactor'
-        },
-        {
-          name: 'chore',
-          value: 'chore',
-          description: 'Chore'
-        }
-      ]
+      choices: this.choices
     })
 
     const message = await input({
@@ -49,7 +51,7 @@ export class Cli {
     })
 
     if (confirmCommit) {
-      await new GitProcessor().commit(result)
+      await this.git.commit(result)
 
       console.log('Commit Successful!')
     }
