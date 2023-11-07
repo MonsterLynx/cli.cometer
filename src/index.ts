@@ -1,1 +1,5 @@
-console.log('hello world')
+#! /usr/bin/env node
+
+import { Cli } from "./Cli";
+
+new Cli().run()
