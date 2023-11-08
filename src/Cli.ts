@@ -33,17 +33,16 @@ export class Cli {
     }
   ]
 
-  constructor(private git = new GitProcessor()) {
-  }
+  constructor(private git = new GitProcessor()) { }
 
   async run() {
     const prefix = await select({
-      message: 'Type of commit',
+      message: 'Type of commit:',
       choices: this.choices
     })
 
     const message = await input({
-      message: 'Type in commit message'
+      message: 'Type in commit message:'
     })
 
     const task = await this.git.taskId()
@@ -52,7 +51,7 @@ export class Cli {
     const result = `${prefix}: ${message} [${task}]`
 
     const confirmCommit = await confirm({
-      message: `You are about to commit "${result}" to branch "${branch}". Confirm?`
+      message: `Commit message: "${result}"\n  Branch        : "${branch}"\n  Confirm?`
     })
 
     if (confirmCommit) {
