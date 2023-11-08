@@ -25,6 +25,11 @@ export class Cli {
       name: 'chore',
       value: 'chore',
       description: 'Chore'
+    },
+    {
+      name: 'test',
+      value: 'test',
+      description: 'Test'
     }
   ]
 
